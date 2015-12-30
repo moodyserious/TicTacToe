@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body class="body">
+
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Tic Tac Toe Game</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class=" homenav" ><a href="#">Home</a></li>
+						<li class="singlenav"><a href=".multi_page"  data-toggle="modal"  data-target="#singlemodal">Single Player</a></li>
+						<li class="multinav" ><a href="#multimodal"   data-toggle="modal"  data-target="#multimodal">Multiplayer</a></li>
+					</ul>
+
+				</div>
+			</div>
+		</nav>
+
+	    <!------------------------Home Image ---------------------------------------->
+        <div class="container-fluid">
+			<div class="row">
+				<div class=" col-sm-6 col-sm-offset-3">
+					<img class="homeimage"  src="images/tictactoe_background.png" alt="Tic Tac Toe Game"/>
+				</div>
+			</div>
+		</div>
+
+
+
+
+			<!---------------------------Multiplayer Modal --------------------------------->
+			<div class="modal fade  multiinput" id="multimodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+							<h4 class="modal-title" id="myModalLabel">Enter players name</h4>
+						</div>
+						<div class="modal-body">
+							<input class="player1input" type="text"/>
+							<input class="player2input" type="text"/>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-default submit" data-dismiss="modal" type="submit">Start</button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+                <!---------------------------Single Player Modal ------------------------------->
+				<div class="modal fade  multiinput" id="singlemodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+								<h4 class="modal-title">Enter your name</h4>
+							</div>
+							<div class="modal-body">
+								<input class="s_player1input" type="text"/>
+						</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-default s_submit" data-dismiss="modal" type="submit">Start</button>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!---------------------------Winner Modal ------------------------------->
+				<div class="modal fade  multiinput" id="winnermodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content ">
+							<div class="modal-header ">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+								<h4 class="modal-title">Winner</h4>
+							</div>
+							<div class="modal-body">
+
+										<img class="multi_winnerimg" src="images/minion1.png">
+								        <img class="single_looserimg" src="images/sad.jpg">
+										<div class="gamestatus"> </div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+		<div class="multi_page container-fluid">
+
+				<div class="row">
+				<div class="col-sm-4 col-sm-offset-4">
+			<!-- --------------------TIC TAC TOE BOARD TABLE --------------------------------->
+					<table class = "table tictactoeboard ">
+						<tr>
+							<td class="box0 h"></td>
+							<td class="box1 v h"></td>
+							<td class="box2 h"></td>
+						</tr>
+						<tr>
+							<td class="box3 h"></td>
+							<td class="box4 v h"></td>
+							<td class="box5 h"></td>
+						</tr>
+						<tr>
+							<td class="box6"></td>
+							<td class="box7 v"></td>
+							<td class="box8"></td>
+						</tr>
+					</table>
+
+				</div> <!-- End of col-sm-4 -->
+
+
+
+               <div class="col-sm-4">
+				   <div class="row">
+					   <div class="col-sm-offset-2 col-sm-9">
+
+						<!------------ Display Players Name Turn ----------->
+							<div class="playersnamebox">
+								<div class="player1name"></div>
+								<div class="player2name"></div>
+
+							</div>
+
+
+					   </div> <!-- end of col-sm-2 -->
+					  </div>  <!-- end of first row -->
+				   <div class="row">
+					   <div class="col-sm-8">
+						   <!----------------Score Board ---------------------->
+						<table class="scoreboard table " border="2">
+							<thead>
+
+							<tr><th colspan ="2"> Score Board</th></tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td class="player1name_scoreboard"></td>
+								<td class="player1score"></td>
+							</tr>
+							<tr>
+								<td class="player2name_scoreboard"></td>
+								<td class="player2score"></td>
+							</tr>
+							</tbody>
+						</table>  <!-- End of scoreboard -->
+
+				        </div>	 <!-- End of col-sm-2 -->
+				   </div> <!-- End of second row -->
+
+				</div> <!-- End of col-sm-4 -->
+              </div>
+				<div class="row">
+					<div class="col-sm-offset-5 col-sm-2">
+						<!-- ---------------Play again button --------------- -->
+						<button type="button"  style="display:none" class=" playagain btn btn-primary ">Play Again </button>
+
+					</div>
+				</div>
+
+			</div> <!-- End of Container -->
+
+	<!-- -----------------------     JQUERY ---------------------------------------------->
+	<script src="js/jquery-1.11.2.min.js" type="text/javascript" ></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="js/app.js" type="text/javascript"></script>
+
+	</body>
+</html>
+
+
+
